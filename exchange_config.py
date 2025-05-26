@@ -4,8 +4,6 @@ import pytz
 from colorama import Style, Fore
 import datetime
 
-# The bot seems complicated? It's not, just try! (and contact me if you have an error, it's probably a silly one :)
-
 renewal = 10
 delta_neutral = False
 timezone = 'Asia/Kathmandu'
@@ -36,6 +34,7 @@ exchanges = {
     # },
 }
 
+# telegram settings
 telegram_sending = False
 apiToken = 'here'
 chatID = 'here'
@@ -48,16 +47,15 @@ first_orders_fill_timeout = 0
 demo_fake_delay = False
 demo_fake_delay_ms = 500
 
-# ------------------------------------ FUNCTIONS (you can ignore) ------------------------------------
 
-
+#  calculate the average of a list of numbers.
 def moy(list1):
     moy = 0
     for n in list1:
         moy += n
     return moy/len(list1)
 
-
+# send a message to telegram with the given message.
 def send_to_telegram(message):
     message = message.replace("[2m", "")
     message = message.replace("[0m", "")
